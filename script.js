@@ -1,3 +1,5 @@
+game();
+
 function getComputerChoice(){
   const choices = ["Rock", "Paper", "Scissors"];
   return choices[Math.floor(Math.random() * choices.length)];
@@ -35,15 +37,18 @@ function playRound(playerSelection, computerSelection){
 }
 
 function game(){
-  let computer, player = 0;
-  for (let i = 0; index < 5; i++) {
-    if(playRound() === "computer"){
+  let computer = 0, player = 0;
+  for (let i = 0; i < 5; i++) {
+    let playerSelection = prompt("Rock, Paper, Scissors?");
+    let computerSelection = getComputerChoice();
+    let winner = playRound(playerSelection, computerSelection);
+    if (winner === "computer") {
       computer++;
     }
-    else if (playRound === "player") {
+    else if (winner === "player") {
       player ++;
     }
-    else{
+    else {
       computer++;
       player++;
     }
